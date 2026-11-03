@@ -417,6 +417,56 @@ document.querySelector("#checkoutForm").addEventListener("submit", event => {
   document.querySelector("#orderSuccess").classList.remove("hidden");
 });
 
+const chatPanel = document.querySelector("#chatPanel");
+let chatHistory = [];
+function toggleChat() {
+  chatPanel.classList.toggle("hidden");
+  if (!chatPanel.classList.contains("hidden")) document.querySelector("#chatInput").focus();
+}
+document.querySelector("#chatLauncher").addEventListener("click", toggleChat);
+document.querySelector("#featuredChatButton").addEventListener("click", () => {
+  if (chatPanel.classList.contains("hidden")) toggleChat();
+});
+document.querySelector("#closeChat").addEventListener("click", () => chatPanel.classList.add("hidden"));
+function appendMessage(text, role) {
+  const message = document.createElement("div");
+  message.className = `chat-message ${role}`;
+  message.textContent = text;
+  document.querySelector("#chatMessages").append(message);
+  message.scrollIntoView({block:"end", behavior:"smooth"});
+  return message;
+}
+document.querySelector("#chatForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  const input = document.querySelector("#chatInput");
+  const text = input.value.trim();
+  if (!text) return;
+  appendMessage(text, "user");
+  input.value = "";
+  const pending = appendMessage("Mình đang tìm câu trả lời...", "assistant");
+  const sendButton = event.currentTarget.querySelector("button");
+  sendButton.disabled = true;
+  const requestHistory = [...chatHistory, {role:"user", content:text}].slice(-10);
+  try {
+    const catalog = products.map(({name, description, price, size}) => ({name, description, price, size}));
+    const response = await fetch("chat.php", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({messages:requestHistory, products:catalog})
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Không thể kết nối trợ lý lúc này.");
+    pending.textContent = data.reply;
+    chatHistory = [...requestHistory, {role:"assistant", content:data.reply}].slice(-10);
+  } catch (error) {
+    pending.className = "chat-message error";
+    pending.textContent = error.message || "Không thể kết nối trợ lý lúc này.";
+  } finally {
+    sendButton.disabled = false;
+    input.focus();
+  }
+});
+
 async function initViewer() {
   const canvas = document.querySelector("#productCanvas");
   const stage = document.querySelector("#viewerStage");
