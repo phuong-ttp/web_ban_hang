@@ -14,6 +14,15 @@ php -S 127.0.0.1:8000
 
 Sau đó mở http://127.0.0.1:8000. Đặt API key trên hosting bằng biến môi trường `GEMINI_API_KEY` (có thể đặt `GEMINI_MODEL` nếu cần); không ghi key vào mã nguồn hoặc đẩy lên Git. Mặc định chat dùng model `gemini-3.5-flash-lite`.
 
+## Deploy lên Render
+
+1. Đẩy các tệp cấu hình `Dockerfile`, `docker-entrypoint.sh`, `.dockerignore` và `render.yaml` lên repo GitHub.
+2. Tạo tài khoản tại https://render.com, chọn **New → Blueprint**, rồi kết nối repo `phuong-ttp/web_ban_hang`.
+3. Khi Render hỏi giá trị `GEMINI_API_KEY`, nhập API key Gemini của bạn. Chỉ nhập trong Render, không ghi vào GitHub hoặc gửi qua chat.
+4. Chọn tạo web service miễn phí và chờ Render build/deploy. Sau khi hoàn tất, mở URL `https://...onrender.com` do Render cấp và gửi URL đó cho người dùng điện thoại.
+
+Render miễn phí có thể tự tạm dừng khi không có lượt truy cập; lần mở đầu sau đó có thể cần chờ khoảng một phút. Chat cần biến môi trường `GEMINI_API_KEY` để trả lời.
+
 ## Chức năng
 
 - Tìm kiếm và lọc 7 sản phẩm gối, chăn, thảm và bộ chăn ga gối; mở giao diện chi tiết, thêm/xóa, tăng/giảm số lượng trong giỏ hàng.
