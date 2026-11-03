@@ -424,9 +424,12 @@ function toggleChat() {
   if (!chatPanel.classList.contains("hidden")) document.querySelector("#chatInput").focus();
 }
 document.querySelector("#chatLauncher").addEventListener("click", toggleChat);
-document.querySelector("#featuredChatButton").addEventListener("click", () => {
-  if (chatPanel.classList.contains("hidden")) toggleChat();
-});
+const featuredChatButton = document.querySelector("#featuredChatButton");
+if (featuredChatButton) {
+  featuredChatButton.addEventListener("click", () => {
+    if (chatPanel.classList.contains("hidden")) toggleChat();
+  });
+}
 document.querySelector("#closeChat").addEventListener("click", () => chatPanel.classList.add("hidden"));
 function appendMessage(text, role) {
   const message = document.createElement("div");
