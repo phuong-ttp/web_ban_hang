@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#552b3a">
+  <meta name="description" content="Mộng Mơ - gối ngủ và sản phẩm chăm sóc giấc ngủ được cá nhân hóa.">
+  <title>Mộng Mơ — Giấc ngủ êm ái cho tâm trạng thư thái</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="polish.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="announcement">
+    <span>● Chăm sóc giấc ngủ cá nhân hóa 1:1</span>
+    <strong>🎁 Tặng ngay tinh dầu oải hương cho đơn hàng hôm nay!</strong>
+    <a href="#chat">☎ 0918 363 636 <span class="announcement-help">| Trợ giúp</span></a>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Mộng Mơ - Trang chủ"><span class="brand-icon">☁</span><span>Mộng Mơ</span></a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="#home">Trang chủ</a>
+      <a href="#products">Sản phẩm</a>
+      <a href="#about">Giới thiệu</a>
+      <a href="#chat">Liên hệ</a>
+    </nav>
+    <form class="search-box" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm">
+      <button class="search-clear hidden" id="searchClear" type="button" aria-label="Xóa từ khóa tìm kiếm">×</button>
+      <button class="search-submit" type="submit" aria-label="Tìm sản phẩm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg></button>
+    </form>
+    <button class="cart-trigger" id="openCart" aria-label="Mở giỏ hàng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg><span class="cart-count" id="cartCount">0</span></button>
+    <button class="user-chip" id="welcomeButton"><span class="avatar">M</span><span><b id="accountLabel">Đăng nhập / Đăng ký</b><small id="accountSub">Tài khoản Mộng Mơ</small></span></button>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Mở menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="welcome-pill"><span>●</span> Chào buổi sáng! Hãy chọn chiếc gối mềm dịu để cân bằng năng lượng hôm nay.</p>
+        <p class="eyebrow">GỐI NẰM · GỐI ÔM · GỐI TRẺ EM</p>
+        <h1>Giấc ngủ êm ái cho<br><span>tâm trạng thư thái</span></h1>
+        <p class="hero-description">Tinh thần nhẹ nhõm, nâng niu vai gáy cá nhân hóa theo từng dáng nằm. Hãy khám phá dòng sản phẩm thiết kế dành riêng cho giấc ngủ của bạn.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#products">Khám phá sản phẩm <span>→</span></a>
+          <a class="button button-secondary" href="#viewer">▶ Xem mô hình gối 3D</a>
+        </div>
+        <div class="hero-perks"><span>🚚 Giao toàn quốc</span><span>↶ Đổi size 7 ngày</span><span>♧ Vỏ tháo giặt dễ dàng</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="floating-note"><span>◆</span><div><b>Độ cứng phù hợp: 85%</b><small>Khuyến nghị cho bạn nằm nghiêng</small></div></div>
+        <div class="hero-product-card">
+          <div class="hero-product-photo"><img src="assets/images/bedroom-bedding.png" alt="Bộ chăn ga gối Mộng Mơ trong phòng ngủ" loading="eager"><div class="photo-caption"><b>Bộ chăn ga gối Mộng Mơ</b><span>Không gian ngủ ấm cúng <strong>699.000đ</strong></span></div></div>
+          <div class="hero-product-bottom"><span><small>Gợi ý riêng cho bạn</small><b>Bộ chăn ga gối Mộng Mơ</b></span><button class="round-add" data-add="bedding-set" aria-label="Thêm bộ chăn ga gối vào giỏ">+</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="discovery-section section-wrap" id="about">
+      <div class="section-heading centered"><span class="eyebrow">MỘNG MƠ · CHĂM SÓC GIẤC NGỦ</span><h2>Không gian nghỉ ngơi cho cả nhà</h2><p>Chọn danh mục bạn quan tâm để khám phá các sản phẩm phù hợp.</p></div>
+      <div class="discovery-grid">
+        <button class="discovery-card" data-shop-category="pain"><span>☁</span><b>Gối nằm</b><small>Cặp gối bông gòn mềm mại cho giấc ngủ hằng ngày</small><em>Khám phá sản phẩm →</em></button>
+        <button class="discovery-card" data-shop-category="family"><span>♡</span><b>Gối cho bé &amp; gia đình</b><small>Gối nằm và gối ôm dành cho bé</small><em>Khám phá sản phẩm →</em></button>
+        <button class="discovery-card" data-shop-category="relax"><span>✿</span><b>Gối ôm &amp; thư giãn</b><small>Gối ôm dài và gối chữ U cho mẹ bầu</small><em>Khám phá sản phẩm →</em></button>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-wrap">
+        <div class="products-heading"><div><p class="eyebrow">DANH MỤC MỘNG MƠ</p><h2>Gối &amp; đồ dùng phòng ngủ</h2></div><div class="filter-pills" id="categoryFilters"><button class="filter-pill active" data-category="all">Tất cả sản phẩm</button><button class="filter-pill" data-category="pain">Gối nằm</button><button class="filter-pill" data-category="family">Gối cho bé</button><button class="filter-pill" data-category="relax">Gối ôm &amp; thư giãn</button><button class="filter-pill" data-category="bedding">Chăn &amp; thảm</button></div></div>
+        <div class="product-grid" id="productGrid"></div>
+        <p class="search-status" id="searchStatus" aria-live="polite"></p>
+        <p class="empty-state hidden" id="emptyProducts">Không tìm thấy sản phẩm phù hợp.</p>
+      </div>
+    </section>
+
+    <section class="featured-section" id="viewer">
+      <div class="featured-layout section-wrap">
+        <div class="viewer-shell">
+          <div class="viewer-toolbar"><span>✨ SẢN PHẨM NỔI BẬT KHUYÊN DÙNG</span><button id="vrButton" class="vr-button">◈ Trải nghiệm VR</button></div>
+          <div class="viewer-stage" id="viewerStage"><canvas id="productCanvas" aria-label="Mô hình gối 3D tương tác"></canvas><div class="viewer-fallback hidden" id="viewerFallback">Mô hình 3D cần kết nối Internet để tải thư viện.</div><div class="viewer-hint">⟳ Mô hình 3D · Rê chuột để xoay nhẹ</div></div>
+          <div class="swatches"><span>Chọn chất liệu vỏ:</span><button class="swatch selected" data-color="#f8f3ed" aria-label="Màu kem"></button><button class="swatch" data-color="#eaa1b1" aria-label="Màu hồng"></button><button class="swatch" data-color="#d9c48a" aria-label="Màu vàng"></button></div>
+        </div>
+        <div class="featured-copy">
+          <h2>Gối bông gòn cao cấp</h2>
+          <p>Mang đến cảm giác êm ái và thoải mái trong từng giấc nghỉ. Gối có thiết kế hình chữ nhật đơn giản, ruột bông gòn mềm mại, đàn hồi tốt, kết hợp vỏ gối có thể tháo rời, thuận tiện cho việc vệ sinh.</p>
+          <div class="feature-info"><article><b>☁ ĐIỂM NỔI BẬT</b><span>✓ Thiết kế hình chữ nhật tiện dụng.</span><span>✓ Ruột bông gòn cao cấp, mềm mại và êm ái.</span><span>✓ Hỗ trợ nâng đỡ đầu và cổ khi nằm.</span></article><article><b>💗 PHÙ HỢP ĐỂ</b><span>✓ Nằm nghỉ và thư giãn trên giường</span><span>✓ Kê đầu khi nằm ngửa hoặc nằm nghiêng.</span><span>✓ Nghỉ ngơi và thư giãn trên giường.</span></article></div>
+          <div class="spec-list"><div><span>Kích thước:</span><b>140 × 70 cm</b></div><div><span>Kiểu dáng:</span><b>Hình chữ nhật</b></div><div><span>Giá:</span><b>489.000đ</b></div></div>
+          <div class="featured-actions"><button class="button button-pink" data-add="pregnancy-pillow">Thêm vào giỏ – 489.000đ</button><button class="button button-glass" data-detail="pregnancy-pillow">Chi tiết sản phẩm</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section section-wrap" id="reviews">
+      <div class="section-heading centered"><span class="eyebrow">ĐÁNH GIÁ THỰC TẾ</span><h2>Khách hàng nói gì sau khi dùng</h2><p>Những chia sẻ chân thành về hành trình ngủ ngon hơn mỗi ngày.</p></div>
+      <div class="review-grid"><article class="review-card"><div class="stars">★★★★★</div><blockquote>“Mình chọn cặp ruột gối bông gòn 45×65cm, gối có độ phồng vừa phải và nằm khá êm.”</blockquote><div class="review-author"><span><b>Chị Thu Trâm</b><small>Đã mua Cặp Ruột Gối Nằm</small></span><em>Đã xác minh</em></div></article><article class="review-card"><div class="stars">★★★★★</div><blockquote>“Gối ôm mềm mại, chiều dài vừa vặn để kê khi nằm nghiêng. Vỏ gối tháo ra vệ sinh cũng tiện.”</blockquote><div class="review-author"><span><b>Anh Ngọc Minh</b><small>Đã mua Gối Ôm Dài</small></span><em>Đã xác minh</em></div></article><article class="review-card"><div class="stars">★★★★★</div><blockquote>“Bé nhà mình 3 tuổi rất mê gối thêu hình khủng long. Gối mềm mại, màu sắc đáng yêu.”</blockquote><div class="review-author"><span><b>Mẹ Bảo Anh</b><small>Đã mua Gối Trẻ Em</small></span><em>Đã xác minh</em></div></article></div>
+      <div class="customer-reviews" id="customerReviews"></div>
+    </section>
+
+    <section class="service-section section-wrap"><article><span>🚚</span><div><b>Giao toàn quốc</b><small>Nội thành 1–2 ngày, tỉnh xa 3–5 ngày nhanh chóng.</small></div></article><article><span>↶</span><div><b>Đổi size 7 ngày</b><small>Còn nguyên tem mác, chưa qua sử dụng được hỗ trợ đổi ngay.</small></div></article><article><span>♧</span><div><b>Vỏ tháo giặt được</b><small>Khóa kéo giấu ẩn, giặt máy chế độ nhẹ không sợ hỏng.</small></div></article></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-grid section-wrap"><div><a class="brand footer-brand" href="#home"><span class="brand-icon">☁</span><span>Mộng Mơ</span></a><p>Thương hiệu sản phẩm chăm sóc giấc ngủ cá nhân hóa hàng đầu, kiến tạo không gian thư thái cho mọi gia đình.</p></div><div><h3>Sản phẩm</h3><a href="#products">Gối nằm</a><a href="#products">Gối ôm dài</a><a href="#products">Gối ngủ em bé</a><a href="#products">Gối tựa thư giãn</a></div><div><h3>Khám phá</h3><a href="#about">Giới thiệu Mộng Mơ</a><a href="#reviews">Đánh giá khách hàng</a></div><div id="chat"><h3>Liên hệ &amp; hỗ trợ</h3><b class="phone">0918 363 636</b><p>Liên hệ với Mộng Mơ qua điện thoại hoặc email.</p><div class="social-links"><a href="#chat" aria-label="Facebook">f</a><a href="#chat" aria-label="TikTok">♪</a><a href="mailto:hello@mongmo.vn" aria-label="Email">✉</a></div></div></div><div class="copyright">© 2026 Mộng Mơ Personal Sleepwear. Tất cả quyền được bảo lưu.</div></footer>
+
+  <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Giỏ hàng" aria-hidden="true"><div class="drawer-header"><div><span class="eyebrow">MỘNG MƠ</span><h2>Giỏ hàng <span id="drawerCount">(0)</span></h2></div><button id="closeCart" aria-label="Đóng giỏ hàng">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-empty" id="cartEmpty"><span>🛍</span><b>Giỏ hàng đang trống</b><p>Chọn món quà êm ái cho giấc ngủ của bạn nhé.</p><button class="button button-primary" id="continueShopping">Khám phá sản phẩm</button></div><div class="cart-summary hidden" id="cartSummary"><div><span>Tạm tính</span><b id="cartSubtotal">0đ</b></div><small>Phí vận chuyển sẽ được xác nhận khi đặt hàng.</small><button class="button button-primary" id="checkoutButton">Tiếp tục thanh toán</button></div></aside>
+
+  <section class="modal-backdrop hidden" id="productModal" role="dialog" aria-modal="true" aria-labelledby="detailName"><article class="modal-card product-detail-modal"><button class="modal-close" data-close-modal aria-label="Đóng">×</button><div class="detail-layout"><div class="detail-gallery"><img id="detailImage" src="" alt=""><span class="detail-badge" id="detailBadge"></span></div><div class="detail-content"><span class="eyebrow">MỘNG MƠ · CHĂM SÓC GIẤC NGỦ</span><h2 id="detailName"></h2><div class="detail-rating"><span class="stars" id="detailStars">★★★★★</span><span id="detailRatingText"></span><a href="#detailReviews">Xem đánh giá</a></div><p class="detail-price" id="detailPrice"></p><p id="detailDescription"></p><div class="detail-meta"><span>✓ Hàng chính hãng Mộng Mơ</span><span>✓ Đổi trả trong 7 ngày</span><span>✓ Giao hàng toàn quốc</span></div><div class="detail-actions"><button class="button button-primary" id="detailAdd">Thêm vào giỏ hàng</button><button class="button button-secondary" id="detailBuy">Mua ngay</button></div></div></div><div class="detail-reviews" id="detailReviews"><h3>Đánh giá sản phẩm</h3><div id="detailReviewList"></div><form id="detailReviewForm" class="review-form"><label>Đánh giá của bạn<select name="rating" required><option value="5">★★★★★ - Rất hài lòng</option><option value="4">★★★★☆ - Hài lòng</option><option value="3">★★★☆☆ - Bình thường</option><option value="2">★★☆☆☆ - Chưa hài lòng</option><option value="1">★☆☆☆☆ - Không hài lòng</option></select></label><label>Chia sẻ trải nghiệm<textarea name="comment" rows="3" maxlength="500" placeholder="Sản phẩm giúp bạn ngủ ngon hơn như thế nào?" required></textarea></label><button class="button button-primary">Gửi đánh giá</button></form></div></article></section>
+
+  <section class="modal-backdrop hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"><article class="modal-card checkout-modal"><button class="modal-close" data-close-modal aria-label="Đóng">×</button><span class="eyebrow">HOÀN TẤT ĐƠN HÀNG</span><h2 id="checkoutTitle">Thông tin thanh toán</h2><p class="modal-note">Đây là giao diện minh họa, đơn hàng chưa được gửi tới máy chủ.</p><div class="checkout-layout"><form id="checkoutForm" class="checkout-form"><label>Họ và tên<input name="name" autocomplete="name" required minlength="2" placeholder="Nguyễn Văn A"></label><label>Số điện thoại<input name="phone" type="tel" autocomplete="tel" pattern="[0-9+ .]{9,16}" required placeholder="0912 345 678"></label><label>Email (không bắt buộc)<input name="email" type="email" autocomplete="email" placeholder="ban@email.com"></label><label>Địa chỉ nhận hàng<textarea name="address" autocomplete="street-address" rows="3" required placeholder="Số nhà, đường, phường/xã, tỉnh/thành"></textarea></label><fieldset><legend>Phương thức thanh toán</legend><label class="payment-option"><input type="radio" name="payment" value="cod" checked> Thanh toán khi nhận hàng (COD)</label><label class="payment-option"><input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng (minh họa)</label></fieldset><button class="button button-primary" type="submit">Xác nhận đặt hàng</button></form><aside class="checkout-summary"><h3>Đơn hàng của bạn</h3><div id="checkoutItems"></div><div class="checkout-shipping"><span>Phí vận chuyển</span><b id="checkoutShipping">0đ</b></div><div class="checkout-total"><span>Tổng cộng</span><b id="checkoutTotal">0đ</b></div><small>Miễn phí vận chuyển cho đơn từ 500.000đ.</small></aside></div><div class="order-success hidden" id="orderSuccess"><span>✓</span><h3>Đặt hàng thành công!</h3><p id="orderMessage"></p><button class="button button-primary" data-close-modal>Tiếp tục mua sắm</button></div></article></section>
+
+  <section class="modal-backdrop hidden" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountTitle"><article class="modal-card account-modal"><button class="modal-close" data-close-modal aria-label="Đóng">×</button><span class="eyebrow">TÀI KHOẢN MỘNG MƠ</span><h2 id="accountTitle">Chào mừng bạn</h2><div class="account-tabs"><button class="active" data-account-tab="login">Đăng nhập</button><button data-account-tab="register">Đăng ký</button></div><form id="accountForm" class="checkout-form"><label class="register-only hidden">Họ tên<input name="name" autocomplete="name" minlength="2" placeholder="Tên của bạn"></label><label>Email<input name="email" type="email" autocomplete="email" required placeholder="ban@email.com"></label><label>Mật khẩu<input name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="Ít nhất 8 ký tự"></label><button class="button button-primary" id="accountSubmit">Đăng nhập</button></form><p class="modal-note">Bản demo không xác thực tài khoản thật và không lưu mật khẩu. Không dùng mật khẩu thật tại đây.</p></article></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
